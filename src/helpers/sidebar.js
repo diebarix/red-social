@@ -5,14 +5,14 @@ const Comments = require('./comments');
 
 module.exports = async function (viewModel) {
     const results = await Promise.all([
-        Stats(),
+        /* Stats(), */
     Images.popular(),
     Comments.newest()]);
 
     viewModel.sidebar = {
-        stats: results[0],
-        popular: results[1],
-        comments: results[2]
+        /* stats: results[0], */
+        popular: results[0],
+        comments: results[1]
     }
     return viewModel
 }
